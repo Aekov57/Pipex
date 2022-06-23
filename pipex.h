@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:32:50 by misimon           #+#    #+#             */
-/*   Updated: 2022/06/23 19:14:36 by misimon          ###   ########.fr       */
+/*   Updated: 2022/06/23 19:44:45 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_pipex
 	char	*path_cmd2;
 }	t_pipex;
 
-t_pipex	*define_var(int argc, char **argv, char **envp);
+t_pipex	*define_var(char **argv, char **envp);
 
 void	child_cmd(t_pipex *main_var, char **envp);
 void	parent_cmd(t_pipex *main_var, char **envp, char **argv);

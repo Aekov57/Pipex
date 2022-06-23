@@ -6,18 +6,18 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:49:50 by misimon           #+#    #+#             */
-/*   Updated: 2022/06/23 18:51:47 by misimon          ###   ########.fr       */
+/*   Updated: 2022/06/23 19:20:03 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-t_pipex	*define_var(int argc, char **argv, char **envp)
+t_pipex	*define_var(char **argv, char **envp)
 {
 	t_pipex	*def_var;
 
 	def_var = malloc(sizeof(t_pipex));
-	if (!def_var || argc != 5)
+	if (!def_var)
 		def_var->error = -1;
 	def_var->file_read = open(argv[1], O_RDONLY);
 	def_var->path_cmd1 = command_path(argv[2], split_path(envp));

@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:40:08 by misimon           #+#    #+#             */
-/*   Updated: 2022/06/23 18:53:42 by misimon          ###   ########.fr       */
+/*   Updated: 2022/06/23 19:32:21 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	*main_var;
 
-	main_var = define_var(argc, argv, envp);
+	if (argc != 5)
+		return (-1);
+	main_var = define_var(argv, envp);
 	if (main_var->error == -1)
 	{
 		write(2, "an_error_occured\n", 18);
